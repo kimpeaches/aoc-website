@@ -1,0 +1,651 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <title>Send Your Referrals | Assist on Call</title>
+        <meta
+            name="description"
+            content="Refer a patient to Assist on Call for home health, hospice or private duty care. Fax 925-969-7636 or submit the referral form online."
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link rel="stylesheet" href="assets/css/style.css" />
+    </head>
+    <body>
+        <header class="nav">
+            <div class="nav-in">
+                <a class="logo" href="index.html"
+                    ><img
+                        src="assets/img/aoc-logo.jpg"
+                        alt="Assist on Call logo"
+                        class="logo-mark"
+                    /><span
+                        >Assist on Call<small
+                            >Compassionate Care, Always Near</small
+                        ></span
+                    ></a
+                >
+                <nav aria-label="Main">
+                    <ul class="menu">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li class="has">
+                            <a href="#">Our Services</a>
+                            <ul class="sub">
+                                <li>
+                                    <a href="home-health.html"
+                                        >Home Health Care</a
+                                    >
+                                </li>
+                                <li>
+                                    <a href="private-duty.html"
+                                        >Private Duty Caregivers</a
+                                    >
+                                </li>
+                                <li>
+                                    <a href="home-health.html#placement"
+                                        >Placement Referrals</a
+                                    >
+                                </li>
+                                <li>
+                                    <a href="hospice.html">Hospice Services</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="has">
+                            <a href="#">Careers</a>
+                            <ul class="sub">
+                                <li>
+                                    <a href="careers-clinicians.html"
+                                        >Clinicians</a
+                                    >
+                                </li>
+                                <li>
+                                    <a href="careers-caregivers.html"
+                                        >Caregivers</a
+                                    >
+                                </li>
+                            </ul>
+                        </li>
+                        <li><a href="resources.html">Resources</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+                <div style="display: flex; align-items: center; gap: 8px">
+                    <a class="btn btn--teal" href="set-an-appointment.html"
+                        >Set an Appointment</a
+                    >
+                    <button
+                        class="navtoggle"
+                        aria-label="Menu"
+                        aria-expanded="false"
+                    >
+                        <span></span><span></span><span></span>
+                    </button>
+                </div>
+            </div>
+        </header>
+        <main>
+            <section class="hero" style="min-height: min(66vh, 620px)">
+                <div class="hero__media">
+                    <img
+                        src="https://images.pexels.com/photos/8065095/pexels-photo-8065095.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                        alt="Clinician completing a patient referral"
+                    />
+                </div>
+
+                <div
+                    class="hero__inner"
+                    style="padding-top: 170px; padding-bottom: 64px"
+                >
+                    <span class="badge rv"
+                        ><span class="pulse"></span>Referrals</span
+                    >
+                    <h1 class="h-lg rv rv-d1">Refer a patient to our care.</h1>
+                    <p class="lead rv rv-d2">
+                        Physicians, case managers, discharge planners and
+                        families are all welcome to refer. Send the details
+                        below or fax them to 925-969-7636.
+                    </p>
+                </div>
+            </section>
+            <nav class="crumb" aria-label="Breadcrumb">
+                <ol>
+                    <li><a href="index.html">Home</a></li>
+                    <li>Send Your Referrals</li>
+                </ol>
+            </nav>
+            <section class="sec" style="background: #fff">
+                <div class="wrap" style="max-width: 940px">
+                    <div class="rv" style="margin-bottom: 34px">
+                        <p class="eyebrow">Referral form</p>
+                        <h2 class="h-lg">Patient referral.</h2>
+                        <p class="lead">
+                            Complete as much as you can. We will contact you if
+                            anything further is needed.
+                        </p>
+                    </div>
+                    <div
+                        id="referral-error-banner"
+                        class="field--full"
+                        style="
+                            display: none;
+                            background: #fdecea;
+                            border: 1px solid #f5c2c0;
+                            color: #7a1f1a;
+                            padding: 14px 18px;
+                            border-radius: 8px;
+                            margin-bottom: 18px;
+                        "
+                    >
+                        Sorry — something went wrong sending your referral.
+                        Please try again, or call our office / fax it to
+                        925-969-7636.
+                    </div>
+                    <form
+                        class="form block-soft rv"
+                        style="padding: clamp(26px, 4vw, 44px)"
+                        action="/submit-referral.php"
+                        method="post"
+                    >
+                        <!-- Honeypot spam trap: real visitors never see or fill this in. -->
+                        <div
+                            style="
+                                position: absolute;
+                                left: -9999px;
+                                top: -9999px;
+                            "
+                            aria-hidden="true"
+                        >
+                            <label for="website">Leave this field blank</label>
+                            <input
+                                id="website"
+                                name="website"
+                                type="text"
+                                tabindex="-1"
+                                autocomplete="off"
+                            />
+                        </div>
+                        <h3
+                            class="h-sm field--full"
+                            style="grid-column: 1/-1; margin: 0 0 4px"
+                        >
+                            Referring party
+                        </h3>
+                        <div class="field">
+                            <label for="referrer_name">Your name</label
+                            ><input
+                                id="referrer_name"
+                                name="referrer_name"
+                                type="text"
+                                required
+                            />
+                        </div>
+                        <div class="field">
+                            <label for="referrer_title">Title / role</label
+                            ><input
+                                id="referrer_title"
+                                name="referrer_title"
+                                type="text"
+                            />
+                        </div>
+                        <div class="field">
+                            <label for="referrer_org"
+                                >Facility or organisation</label
+                            ><input
+                                id="referrer_org"
+                                name="referrer_org"
+                                type="text"
+                            />
+                        </div>
+                        <div class="field">
+                            <label for="relationship"
+                                >Relationship to patient</label
+                            ><select id="relationship" name="relationship">
+                                <option value="Physician">Physician</option>
+                                <option value="Case manager">
+                                    Case manager
+                                </option>
+                                <option value="Discharge planner">
+                                    Discharge planner
+                                </option>
+                                <option value="Social worker">
+                                    Social worker
+                                </option>
+                                <option value="Family member">
+                                    Family member
+                                </option>
+                                <option value="Self">Self</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        <div class="field">
+                            <label for="referrer_email">Your email</label
+                            ><input
+                                id="referrer_email"
+                                name="referrer_email"
+                                type="email"
+                                required
+                            />
+                        </div>
+                        <div class="field">
+                            <label for="referrer_phone">Your phone</label
+                            ><input
+                                id="referrer_phone"
+                                name="referrer_phone"
+                                type="tel"
+                                required
+                            />
+                        </div>
+                        <div class="field">
+                            <label for="referrer_fax">Your fax</label
+                            ><input
+                                id="referrer_fax"
+                                name="referrer_fax"
+                                type="tel"
+                            />
+                        </div>
+                        <div class="field">
+                            <label for="referrer_besttime"
+                                >Best time to reach you</label
+                            ><input
+                                id="referrer_besttime"
+                                name="referrer_besttime"
+                                type="text"
+                            />
+                        </div>
+                        <h3
+                            class="h-sm"
+                            style="grid-column: 1/-1; margin: 22px 0 4px"
+                        >
+                            Patient details
+                        </h3>
+                        <div class="field">
+                            <label for="patient_first">Patient first name</label
+                            ><input
+                                id="patient_first"
+                                name="patient_first"
+                                type="text"
+                                required
+                            />
+                        </div>
+                        <div class="field">
+                            <label for="patient_last">Patient last name</label
+                            ><input
+                                id="patient_last"
+                                name="patient_last"
+                                type="text"
+                                required
+                            />
+                        </div>
+                        <div class="field">
+                            <label for="patient_dob"
+                                >Patient date of birth</label
+                            ><input
+                                id="patient_dob"
+                                name="patient_dob"
+                                type="date"
+                            />
+                        </div>
+                        <div class="field">
+                            <label for="patient_phone">Patient phone</label
+                            ><input
+                                id="patient_phone"
+                                name="patient_phone"
+                                type="tel"
+                            />
+                        </div>
+                        <div class="field field--full">
+                            <label for="patient_address"
+                                >Patient street address</label
+                            ><input
+                                id="patient_address"
+                                name="patient_address"
+                                type="text"
+                            />
+                        </div>
+                        <div class="field">
+                            <label for="patient_city">City</label
+                            ><input
+                                id="patient_city"
+                                name="patient_city"
+                                type="text"
+                            />
+                        </div>
+                        <div class="field">
+                            <label for="patient_zip">ZIP code</label
+                            ><input
+                                id="patient_zip"
+                                name="patient_zip"
+                                type="text"
+                            />
+                        </div>
+                        <div class="field">
+                            <label for="service">Service requested</label
+                            ><select id="service" name="service" required>
+                                <option
+                                    value="Assist on Call Professional In-Home Care Services, Inc. (Home Health)"
+                                >
+                                    Assist on Call Professional In-Home Care
+                                    Services, Inc. (Home Health)
+                                </option>
+                                <option
+                                    value="Assist on Call Palliative & Hospice Care, Inc. (Hospice)"
+                                >
+                                    Assist on Call Palliative & Hospice Care,
+                                    Inc. (Hospice)
+                                </option>
+                                <option
+                                    value="Assist on Call, Inc. (Private Duty Caregivers)"
+                                >
+                                    Assist on Call, Inc. (Private Duty
+                                    Caregivers)
+                                </option>
+                            </select>
+                        </div>
+                        <div class="field">
+                            <label for="diagnosis">Primary diagnosis</label
+                            ><input
+                                id="diagnosis"
+                                name="diagnosis"
+                                type="text"
+                            />
+                        </div>
+                        <div class="field">
+                            <label for="physician">Referring physician</label
+                            ><input
+                                id="physician"
+                                name="physician"
+                                type="text"
+                            />
+                        </div>
+                        <div class="field">
+                            <label for="physician_phone">Physician phone</label
+                            ><input
+                                id="physician_phone"
+                                name="physician_phone"
+                                type="tel"
+                            />
+                        </div>
+                        <div class="field">
+                            <label for="insurance">Insurance / payer</label
+                            ><input
+                                id="insurance"
+                                name="insurance"
+                                type="text"
+                            />
+                        </div>
+                        <div class="field">
+                            <label for="start_date"
+                                >Requested start of care</label
+                            ><input
+                                id="start_date"
+                                name="start_date"
+                                type="date"
+                            />
+                        </div>
+                        <div class="field">
+                            <label for="emergency_name"
+                                >Emergency contact name</label
+                            ><input
+                                id="emergency_name"
+                                name="emergency_name"
+                                type="text"
+                            />
+                        </div>
+                        <div class="field">
+                            <label for="emergency_phone"
+                                >Emergency contact phone</label
+                            ><input
+                                id="emergency_phone"
+                                name="emergency_phone"
+                                type="tel"
+                            />
+                        </div>
+                        <div class="field field--full">
+                            <label for="notes"
+                                >Additional clinical information, orders or
+                                special instructions</label
+                            ><textarea id="notes" name="notes"></textarea>
+                        </div>
+                        <div
+                            class="field field--full"
+                            style="
+                                flex-direction: row;
+                                align-items: flex-start;
+                                gap: 12px;
+                            "
+                        >
+                            <input
+                                id="auth"
+                                name="auth"
+                                type="checkbox"
+                                required
+                                style="width: auto; margin-top: 4px"
+                            /><label
+                                for="auth"
+                                style="
+                                    text-transform: none;
+                                    letter-spacing: 0;
+                                    font-weight: 400;
+                                    font-size: 0.9rem;
+                                    color: var(--muted);
+                                "
+                                >I confirm I am authorised to share this patient
+                                information for the purpose of arranging
+                                care.</label
+                            >
+                        </div>
+                        <div class="field field--full">
+                            <button class="btn btn--teal" type="submit">
+                                Submit referral
+                            </button>
+                        </div>
+                    </form>
+                    <div class="notice rv" style="margin-top: 22px">
+                        <h3>Prefer to fax?</h3>
+                        <p style="margin: 0">
+                            Fax referrals and physician orders to 925-969-7636,
+                            or call 925-969-7634 to speak with our intake team.
+                            Please do not email protected health information
+                            through unsecured channels.
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer class="foot">
+            <div class="wrap">
+                <div class="foot__grid">
+                    <div class="rv">
+                        <a class="logo" href="index.html" style="color: #fff"
+                            ><img
+                                src="assets/img/aoc-logo.jpg"
+                                alt="Assist on Call logo"
+                                class="logo-mark"
+                            /><span
+                                >Assist on Call<small
+                                    >Compassionate Care, Always Near</small
+                                ></span
+                            ></a
+                        >
+                        <p style="margin-top: 20px; max-width: 34ch">
+                            Reach out to ASSIST ON CALL for personalized home
+                            health and in-home care services. We&rsquo;re here
+                            to support you with compassionate care and dedicated
+                            assistance.
+                        </p>
+                        <div class="seal">
+                            <img
+                                src="assets/img/joint-commission-seal.png"
+                                alt="The Joint Commission National Quality Approval seal"
+                                class="seal-mark"
+                            /><span
+                                >Accredited by:<br />The Joint Commission</span
+                            >
+                        </div>
+                    </div>
+                    <div class="rv rv-d1 foot__ent">
+                        <h4>Home Health</h4>
+                        <b
+                            >Assist on Call Professional In-Home Care Services,
+                            Inc.</b
+                        >
+                        <ul>
+                            <li>
+                                Phone: <a href="tel:9259697634">925-969-7634</a>
+                            </li>
+                            <li>Fax: 925-969-7636</li>
+                            <li>
+                                <a href="mailto:info@assistoncallprof.com"
+                                    >info@assistoncallprof.com</a
+                                >
+                            </li>
+                            <li>
+                                2100 Monument Blvd., Ste. 8-A<br />Pleasant
+                                Hill, CA 94523
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="rv rv-d2 foot__ent">
+                        <h4>Private Duty</h4>
+                        <b>Assist on Call, Inc.</b>
+                        <ul>
+                            <li>
+                                Phone: <a href="tel:9259697634">925-969-7634</a>
+                            </li>
+                            <li>Fax: 925-969-7636</li>
+                            <li>
+                                <a href="mailto:info@assistoncallinc.com"
+                                    >info@assistoncallinc.com</a
+                                >
+                            </li>
+                            <li>
+                                2100 Monument Blvd., Ste. 9<br />Pleasant Hill,
+                                CA 94523
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="rv rv-d3 foot__ent">
+                        <h4>Palliative &amp; Hospice</h4>
+                        <b
+                            >Assist on Call Palliative &amp; Hospice Care,
+                            Inc.</b
+                        >
+                        <ul>
+                            <li>
+                                Phone: <a href="tel:9259697634">925-969-7634</a>
+                            </li>
+                            <li>Fax: 925-969-7636</li>
+                            <li>
+                                <a href="mailto:info@aochospice.com"
+                                    >info@aochospice.com</a
+                                >
+                            </li>
+                            <li>
+                                2100 Monument Blvd., Ste. 8b<br />Pleasant Hill,
+                                CA 94523
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div
+                    class="foot__grid"
+                    style="
+                        margin-top: 54px;
+                        grid-template-columns: repeat(4, 1fr);
+                    "
+                >
+                    <div>
+                        <h4>Services</h4>
+                        <ul>
+                            <li>
+                                <a href="home-health.html">Home Health Care</a>
+                            </li>
+                            <li>
+                                <a href="private-duty.html"
+                                    >Private Duty Caregivers</a
+                                >
+                            </li>
+                            <li><a href="hospice.html">Hospice Services</a></li>
+                            <li>
+                                <a href="home-health.html#placement"
+                                    >Placement Referrals</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="about.html">About Us</a></li>
+                            <li>
+                                <a href="testimonials.html"
+                                    >Client Testimonials</a
+                                >
+                            </li>
+                            <li><a href="resources.html">Resources</a></li>
+                            <li><a href="blog.html">Blog</a></li>
+                            <li><a href="sitemap.html">Sitemap</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Careers</h4>
+                        <ul>
+                            <li>
+                                <a href="careers-clinicians.html">Clinicians</a>
+                            </li>
+                            <li>
+                                <a href="careers-caregivers.html">Caregivers</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Get in Touch</h4>
+                        <ul>
+                            <li><a href="contact.html">Contact Us</a></li>
+                            <li>
+                                <a href="set-an-appointment.html"
+                                    >Set an Appointment</a
+                                >
+                            </li>
+                            <li>
+                                <a href="send-your-referrals.html"
+                                    >Send Your Referrals</a
+                                >
+                            </li>
+                            <li>
+                                <a href="view-map-and-directions.html"
+                                    >View Map &amp; Directions</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="foot__bot">
+                    <span
+                        >&copy; Copyright 2024 &ndash; 2026 Assist on Call. All
+                        rights reserved.</span
+                    >
+                    <nav>
+                        <a href="privacy-notice.html">Privacy Notice</a
+                        ><a href="do-not-sell.html"
+                            >Do Not Sell or Share My Personal Information</a
+                        ><a href="sitemap.html">Sitemap</a>
+                    </nav>
+                </div>
+            </div>
+        </footer>
+        <script src="assets/js/main.js"></script>
+        <script>
+            if (
+                new URLSearchParams(window.location.search).get("error") === "1"
+            ) {
+                var banner = document.getElementById("referral-error-banner");
+                if (banner) banner.style.display = "block";
+            }
+        </script>
+    </body>
+</html>
